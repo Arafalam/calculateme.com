@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.container{
+  top: 30%;
+  text-align: center;
+}
+h1{
+  text-align: center;
+}
+.row{
+  margin: 8px;
+}.button{
+  padding: 20px;
+  text-size: 30vw;
+  margin: 0 5px;
+  border: 2px solid black;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: silver;
+}
+body{
+  background-color: black;
+}
+h1{
+  color:white;
+}
+.row input{
+  margin: 0;
+  padding: 11px 38px;
+  border:2px solid black;
+  border-radius: 50px;
+}
+
+
+</style>
+  <link rel="stylesheet" href="www.css">
+  <link rel="stylesheet" href="hhh.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Calculate Me</h1>
+  <div class="container">
+    <div class="row"
+    <input class="input" type="text>"
+    </div>
+    <div class="an"
+     <button class="button">AC</button>
+      <button class="button">+/-</button>
+       <button class="button">÷</button>
+       </div>
+    <div class="row">
+      <button class="button">1</button>
+      <button class="button">2</button>
+       <button class="button">3</button>
+      <button class="button">*</button>
+      </div>
+      <div class="row">
+       <button class="button">4</button>
+        <button class="button">5</button>
+         <button class="button">6</button>
+          <button class="button">-</button>
+      </div>
+          <div class="row">
+           <button class="button">7</button>
+            <button class="button">8</button>
+             <button class="button">9</button>
+               <button class="button">+</button>
+              <div class="row">
+              
+             
+               <button class="button">0</button>
+             
+                <button class="button">.</button>
+                
+                
+                   <button class="button">=</button>
+      
+   
+  </div>
+          </div>
+  
+  
+  <script>
+let string='';
+let buttons=document.querySelectorAll('.button');
+Array.from(buttons).forEach((button)=>{
+  button.addEventListener('click',(e)=>{
+    if(e.target.innerHTML == '='){
+      string = eval(string);
+      document.querySelector('input').value = string;
+    }
+    else if(e.target.innerHTML == 'AC'){
+      string = "";
+      document.querySelector('input').value = string;
+    }
+    else{
+    console.log(e.target)
+    string = string + e.target.innerHTML;
+    document.querySelector('input').value = string;
+    }
+  })
+})
+
+</script>
+  <script src="game.js"></script>
+</body>
+</html>
